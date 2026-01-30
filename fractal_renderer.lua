@@ -43,7 +43,7 @@ for i = 0, maxIterations do
         local r = math.floor(128 + 127 * math.sin(math.rad(hue)))
         local g = math.floor(128 + 127 * math.sin(math.rad(hue + 120)))
         local b = math.floor(128 + 127 * math.sin(math.rad(hue + 240)))
-        colors[i] = (r << 16) | (g << 8) | b | 0xFF000000
+        colors[i] = r * 65536 + g * 256 + b + 0xFF000000
     end
 end
 
